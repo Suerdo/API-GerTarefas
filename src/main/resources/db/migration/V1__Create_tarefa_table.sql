@@ -1,0 +1,8 @@
+CREATE TABLE tarefas (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(255) NOT NULL,
+    descricao TEXT NOT NULL,
+    prioridade VARCHAR(10) NOT NULL,
+    data DATETIME NOT NULL,
+    concluido BOOLEAN DEFAULT FALSE
+);
