@@ -34,4 +34,13 @@ public class TarefaController {
         var page = repository.findAllByConcluidoFalse(paginacao).map(DadosListagemTarefa::new);
         return ResponseEntity.ok(page);
     }
+
+    @PutMapping("/{id}")
+    @Transactional
+    public ResponseEntity atualizar(@RequestBody @Valid DadosAtualizacaoTarefa dados) {
+        var tarefa = repository.getReferenceById(dados.id());
+        tarefa.atualizarInformacoes(dados);
+
+        return ResponseEntity.ok(new DadosDetalhamentoTarefa(tarefa));
+    }
 }

@@ -14,7 +14,6 @@ public record DadosCadastroTarefa(
         @NotNull
         Prioridade prioridade,
         @NotNull
-        @Future
         LocalDateTime data
 ) {
 }

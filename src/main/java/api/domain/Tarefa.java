@@ -32,4 +32,22 @@ public class Tarefa {
         this.data = dados.data();
         this.concluido = false;
     }
+
+    public void atualizarInformacoes(DadosAtualizacaoTarefa dados) {
+        if(dados.titulo() != null) {
+            this.titulo = dados.titulo();
+        }
+        if(dados.descricao() != null) {
+            this.descricao = dados.descricao();
+        }
+        if(dados.prioridade() != null) {
+            this.prioridade = dados.prioridade();
+        }
+        if(dados.data() != null) {
+            this.data = dados.data();
+        }
+        if(dados.concluido() != null) {
+            this.concluido = dados.concluido();
+        }
+    }
 }
