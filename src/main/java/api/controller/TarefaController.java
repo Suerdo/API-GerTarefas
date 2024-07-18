@@ -43,4 +43,12 @@ public class TarefaController {
 
         return ResponseEntity.ok(new DadosDetalhamentoTarefa(tarefa));
     }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public ResponseEntity deletar(@PathVariable Long id){
+        repository.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
+
 }
